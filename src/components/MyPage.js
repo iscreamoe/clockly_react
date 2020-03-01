@@ -1,8 +1,10 @@
 import React from 'react';
 import Friend from './Friend';
 import { Header, Segment, Grid } from 'semantic-ui-react';
+import { Dropdown, Menu } from 'semantic-ui-react';
 
 const MyPage = props => {
+
   const friends = [
     { id: 1, name: "foobar" },
     { id: 2, name: "hoge" },
@@ -10,11 +12,20 @@ const MyPage = props => {
     { id: 4, name: "piyo" },
 ];
 
+const options = [
+  { key: 1, text: 'Choice 1', value: 1 },
+  { key: 2, text: 'Choice 2', value: 2 },
+  { key: 3, text: 'Choice 3', value: 3 },
+];
+
   return (
     <>
       <Segment clearing>
         <Header as='h2' floated='right'>
-          User Name
+        User Name
+          <Menu compact>
+            <Dropdown text='Dropdown' options={options} simple item />
+          </Menu>
         </Header>
         <Header as='h2' floated='left'>
           CLOCKLY
@@ -40,4 +51,5 @@ const MyPage = props => {
     </>
   )
 }
+
 export default MyPage;

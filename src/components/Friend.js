@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
 const Friend = props => {
-  const { id, name } = props;
+  const { name } = props;
 
   return (
   <>
@@ -11,22 +11,27 @@ const Friend = props => {
       <Card.Content>
         <Card.Header>
           <h1>{name}</h1>
-          <p>{id}</p>
+          <p>California/United States</p>
         </Card.Header>
         
         
-        <Card.Meta>
+        {/* <Card.Meta>
           <span className='date'>Joined in 2015</span>
-        </Card.Meta>
+        </Card.Meta> */}
         <Card.Description>
+          <Icon.Group size='large'>
+            <Icon name='clock' /><span>12:34</span>
+          </Icon.Group>
+            <p>2020/03/01(Sun)</p>
         </Card.Description>
-        </Card.Content>
+      </Card.Content>
 
       <Card.Content extra>
-        <p>
-          <Icon name='user' />
-          22 Friends
-        </p>
+        <Icon.Group size='large'>
+        <Icon name='twitter' />
+        <Icon corner name='add' />
+        </Icon.Group>
+        Add on Twitter
       </Card.Content>
     </Card>
   </>

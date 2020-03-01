@@ -7,7 +7,7 @@ const MyPage = props => {
     { id: 1, name: "foobar" },
     { id: 2, name: "hoge" },
     { id: 3, name: "fuga" },
-    { id: 4, name: "piyo" }
+    { id: 4, name: "piyo" },
 ];
 
   return (

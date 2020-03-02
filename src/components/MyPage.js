@@ -6,10 +6,10 @@ import { Dropdown, Menu } from 'semantic-ui-react';
 const MyPage = props => {
 
   const friends = [
-    { id: 1, name: "foobar" },
-    { id: 2, name: "hoge" },
-    { id: 3, name: "fuga" },
-    { id: 4, name: "piyo" },
+    { id: 1, name: "foobar", countryCity: "California", countryName: "United States", flag: "us flag" },
+    { id: 2, name: "hoge", countryCity: "Kuala Lumpur", countryName: "Malaysia", flag: "my flag" },
+    { id: 3, name: "fuga", countryCity: "Melbourne", countryName: "Australia", flag: "au flag" },
+    { id: 4, name: "piyo", countryCity: "Paris", countryName: "France", flag: "fr flag" },
 ];
 
 const options = [
@@ -37,12 +37,15 @@ const options = [
       {/* Friend コンポーネントの呼び出し& props の受け渡し */}
       <Grid relaxed columns={4}>
         {friends.map((friend, index) => {
-          const { id, name } = friend;
+          const { id, name, countryCity, countryName, flag } = friend;
           return (
               <Grid.Column key={index}>
                 <Friend 
                   id = {id}
                   name = {name}
+                  countryCity = {countryCity}
+                  countryName = {countryName}
+                  flag = {flag}
                 />
               </Grid.Column>
           )

@@ -11,7 +11,7 @@ const Friend = props => {
       <Card.Content>
         <Card.Header>
           <h1>{name}</h1>
-          <p>California/United States</p>
+          <p>California/United States &nbsp;&nbsp;<i class="us flag"></i></p>
         </Card.Header>
         
         

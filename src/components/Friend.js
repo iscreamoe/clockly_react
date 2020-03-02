@@ -2,22 +2,17 @@ import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
 const Friend = props => {
-  const { name, countryCity, countryName, flag } = props;
+  const { image, name, countryCity, countryName, flag } = props;
 
   return (
   <>
     <Card>
-      <Image src='https://picsum.photos/id/237/150/150' wrapped ui={false} />
+      <Image src={image} wrapped ui={false} />
       <Card.Content>
         <Card.Header>
           <h1>{name}</h1>
           <p>{countryCity}/{countryName} &nbsp;&nbsp;<i class={flag}></i></p>
         </Card.Header>
-        
-        
-        {/* <Card.Meta>
-          <span className='date'>Joined in 2015</span>
-        </Card.Meta> */}
         <Card.Description>
           <Icon.Group size='large'>
             <Icon name='clock' /><span>12:34</span>

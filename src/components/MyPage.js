@@ -6,10 +6,10 @@ import { Dropdown, Menu } from 'semantic-ui-react';
 const MyPage = props => {
 
   const friends = [
-    { id: 1, name: "foobar", countryCity: "California", countryName: "United States", flag: "us flag" },
-    { id: 2, name: "hoge", countryCity: "Kuala Lumpur", countryName: "Malaysia", flag: "my flag" },
-    { id: 3, name: "fuga", countryCity: "Melbourne", countryName: "Australia", flag: "au flag" },
-    { id: 4, name: "piyo", countryCity: "Paris", countryName: "France", flag: "fr flag" },
+    { id: 1, image: "https://picsum.photos/id/237/150/150", name: "foobar", countryCity: "California", countryName: "United States", flag: "us flag" },
+    { id: 2, image: "https://picsum.photos/id/666/150/150", name: "hoge", countryCity: "Kuala Lumpur", countryName: "Malaysia", flag: "my flag" },
+    { id: 3, image: "https://picsum.photos/id/222/150/150", name: "fuga", countryCity: "Melbourne", countryName: "Australia", flag: "au flag" },
+    { id: 4, image: "https://picsum.photos/id/555/150/150", name: "piyo", countryCity: "Paris", countryName: "France", flag: "fr flag" },
 ];
 
 const options = [
@@ -37,11 +37,12 @@ const options = [
       {/* Friend コンポーネントの呼び出し& props の受け渡し */}
       <Grid relaxed columns={4}>
         {friends.map((friend, index) => {
-          const { id, name, countryCity, countryName, flag } = friend;
+          const { id, image, name, countryCity, countryName, flag } = friend;
           return (
               <Grid.Column key={index}>
                 <Friend 
                   id = {id}
+                  image = {image}
                   name = {name}
                   countryCity = {countryCity}
                   countryName = {countryName}

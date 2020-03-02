@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from "react-router-dom";
 import MyPage from './MyPage';
 import TopPage from './TopPage';
 
@@ -7,10 +11,13 @@ import TopPage from './TopPage';
 const App = () => {
 
   return (
+    <Router>
     <>
-    <TopPage />
-    <MyPage />
+    <Route exact path="/" component = {TopPage} />
+    <Route exact path="/mypage" component = {MyPage} />
+
     </>
+    </Router>
   )
 }
 

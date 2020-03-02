@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
 const Friend = props => {
-  const { name } = props;
+  const { name, countryCity, countryName, flag } = props;
 
   return (
   <>
@@ -11,7 +11,7 @@ const Friend = props => {
       <Card.Content>
         <Card.Header>
           <h1>{name}</h1>
-          <p>California/United States</p>
+          <p>{countryCity}/{countryName} &nbsp;&nbsp;<i class={flag}></i></p>
         </Card.Header>
         
         

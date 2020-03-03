@@ -2,6 +2,7 @@ import React from 'react';
 import Friend from './Friend';
 import { Header, Segment, Grid } from 'semantic-ui-react';
 import { Dropdown, Menu } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 const MyPage = () => {
 
@@ -21,40 +22,57 @@ const options = [
 
   return (
     <>
-      <Segment clearing>
-        <Header as='h2' floated='right'>
-        User Name
-          <Menu compact>
-            <Dropdown text='Dropdown' options={options} simple item />
-          </Menu>
-        </Header>
-        <Header as='h2' floated='left'>
-          CLOCKLY
-        </Header>
-      </Segment>
+      <Wrapper>
+        <Segment clearing>
+          <Header as='h2' floated='right'>
+          User Name
+            <Menu compact>
+              <Dropdown text='Dropdown' options={options} simple item />
+            </Menu>
+          </Header>
+          <Header as='h2' floated='left'>
+            CLOCKLY
+          </Header>
+        </Segment>
 
-      <h3>My Page</h3>
+        <MyPageTitle>★- My Page -★</MyPageTitle>
 
-      {/* Friend コンポーネントの呼び出し& props の受け渡し */}
-      <Grid relaxed columns={4}>
-        {friends.map((friend, index) => {
-          const { id, image, name, countryCity, countryName, flag } = friend;
-          return (
-              <Grid.Column key={index}>
-                <Friend 
-                  id = {id}
-                  image = {image}
-                  name = {name}
-                  countryCity = {countryCity}
-                  countryName = {countryName}
-                  flag = {flag}
-                />
-              </Grid.Column>
-          )
-        })}
-      </Grid>
+        <Container>
+          <Grid relaxed columns={4}>
+            {friends.map((friend, index) => {
+              const { id, image, name, countryCity, countryName, flag } = friend;
+              return (
+                <Grid.Column key={index}>
+                  <Friend 
+                    id = {id}
+                    image = {image}
+                    name = {name}
+                    countryCity = {countryCity}
+                    countryName = {countryName}
+                    flag = {flag}
+                    />
+                </Grid.Column>
+              )
+            })}
+          </Grid>
+        </Container>
+      </Wrapper>
     </>
   );
 }
+
+const Wrapper = styled.div`
+  background-size: cover;
+  height: 100vh;
+` 
+const Container = styled.div`
+  margin-top: 40px;
+  text-align: center;
+`
+const MyPageTitle = styled.div`
+  padding: 32px 0;
+  font-size: 32px;
+  text-align: center;
+` 
 
 export default MyPage;

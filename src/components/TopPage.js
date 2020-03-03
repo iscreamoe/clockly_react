@@ -4,7 +4,7 @@ import { Header, Icon, Button } from 'semantic-ui-react';
 
 const TopPage = () => (
   <>
-      <Header as='h2' icon textAlign='center'>
+      <Header as='h2' icon textAlign='center' className="top_header">
         <Icon name='clock outline' circular />
           <Header.Content>CLOCKLY</Header.Content>
       </Header>
@@ -14,7 +14,5 @@ const TopPage = () => (
     
   </>
 )
-
-
 
 export default TopPage;

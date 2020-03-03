@@ -30,6 +30,7 @@ const Friend = props => {
       </Card.Content>
     </Card>
   </>
-  )
+  );
 }
+
 export default Friend;

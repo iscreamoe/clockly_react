@@ -3,7 +3,7 @@ import Friend from './Friend';
 import { Header, Segment, Grid } from 'semantic-ui-react';
 import { Dropdown, Menu } from 'semantic-ui-react';
 
-const MyPage = props => {
+const MyPage = () => {
 
   const friends = [
     { id: 1, image: "https://picsum.photos/id/237/150/150", name: "foobar", countryCity: "California", countryName: "United States", flag: "us flag" },
@@ -12,6 +12,7 @@ const MyPage = props => {
     { id: 4, image: "https://picsum.photos/id/555/150/150", name: "piyo", countryCity: "Paris", countryName: "France", flag: "fr flag" },
 ];
 
+//  doropdown link
 const options = [
   { key: 1, text: 'Choice 1', value: 1 },
   { key: 2, text: 'Choice 2', value: 2 },
@@ -53,7 +54,7 @@ const options = [
         })}
       </Grid>
     </>
-  )
+  );
 }
 
 export default MyPage;

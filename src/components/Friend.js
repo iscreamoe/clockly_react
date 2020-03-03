@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
+const moment = require('moment-timezone');
 const Friend = props => {
   const { image, name, countryCity, countryName, flag } = props;
 
@@ -15,7 +16,7 @@ const Friend = props => {
         </Card.Header>
         <Card.Description>
           <Icon.Group size='large'>
-            <Icon name='clock' /><span>12:34</span>
+          <Icon name='clock' /><span>{moment().tz("America/Los_Angeles").format()}</span>
           </Icon.Group>
             <p>2020/03/01(Sun)</p>
         </Card.Description>

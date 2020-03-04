@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Header, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
-import images from '../images/toppage.jpg';
+import bgImg from '../images/bgImg.jpg';
 
 const TopPage = () => (
   <>
@@ -22,7 +22,7 @@ const TopPage = () => (
 )
 
 const Wrapper = styled.div`
-  background-image: url(${images});
+  background-image: url(${bgImg});
   background-size: cover;
   height: 100vh;
 ` 

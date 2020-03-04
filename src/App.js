@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import MyPage from './components/MyPage';
 import TopPage from './components/TopPage';
+import Time from './components/Time';
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
     <Router>
       <Route exact path="/" component = {TopPage} />
       <Route exact path="/mypage" component = {MyPage} />
+      <Route exact path="/time" component = {Time} />
     </Router>
   );
 }

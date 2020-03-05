@@ -11,6 +11,7 @@ const Time = () => {
     <Container>
       { dayjs(timestamp).format('YYYY/MM/DD HH:mm:ss') }
       {dayjs.locale('es')}
+      {dayjs().utcOffset(120)}
     </Container>
     </>
   );

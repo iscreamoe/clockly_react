@@ -8,7 +8,6 @@ import TopPage from './components/TopPage';
 import Time from './components/Time';
 
 const App = () => {
-
   return (
     <Router>
       <Route exact path="/" component = {TopPage} />

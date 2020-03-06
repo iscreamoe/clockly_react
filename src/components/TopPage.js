@@ -6,7 +6,6 @@ import bgImg from '../images/bgImg.jpg';
 
 const TopPage = () => {
   return (
-    <>
       <Wrapper>
         <Header as='h2' icon textAlign='center' className="top_header">
           <Logo>
@@ -15,11 +14,10 @@ const TopPage = () => {
           </Logo>
         </Header>
         <Container>
-          <Button>Sign up</Button>
-          <Button><Link to='/MyPage'>Log in</Link></Button>
+          <Button><Link to='/signup'>Sign up</Link></Button>
+          <Button><Link to='/login'>Log in</Link></Button>
         </Container>
       </Wrapper>
-    </>
   );
 }
 

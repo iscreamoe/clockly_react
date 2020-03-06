@@ -1,5 +1,6 @@
 import React from 'react';
 import Friend from './Friend';
+import { Link } from "react-router-dom";
 import { Header, Segment, Grid } from 'semantic-ui-react';
 import { Dropdown, Menu } from 'semantic-ui-react';
 import styled from 'styled-components';
@@ -17,7 +18,7 @@ const MyPage = () => {
 const options = [
   { key: 1, text: 'Choice 1', value: 1 },
   { key: 2, text: 'Choice 2', value: 2 },
-  { key: 3, text: 'Choice 3', value: 3 },
+  { key: 3, text: <Link to='/'>LOGOUT</Link>, value: 3 },
 ];
 
   return (

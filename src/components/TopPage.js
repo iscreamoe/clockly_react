@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Header, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 import bgImg from '../images/bgImg.jpg';
+import Button from '../components/01_atoms/Button'
 
 const TopPage = () => {
   return (
@@ -10,12 +11,18 @@ const TopPage = () => {
         <Header as='h2' icon textAlign='center' className="top_header">
           <Logo>
             <Icon name='clock outline' circular />
-              <Title>CLOCKLY</Title>
+            <Title>CLOCKLY</Title>
           </Logo>
         </Header>
         <Container>
-          <Button><Link to='/signup'>Sign up</Link></Button>
-          <Button><Link to='/login'>Log in</Link></Button>
+          <Link to='/signup'><Button
+              name = "SIGNUP"
+            />
+          </Link>
+          <Link to='/login'><Button
+              name = "LOGIN"
+            />
+          </Link>
         </Container>
       </Wrapper>
   );
@@ -39,14 +46,14 @@ const Container = styled.div`
   margin-top: 50px;
   text-align: center;
 `
-const Button = styled.button`
-  background: transparent;
-  border-radius: 40px;
-  border: 2px solid palevioletred;
-  color: #fff;
-  margin: 24px;
-  padding: 16px 24px;
-  letter-spacing: 1px;
-`
+// const Button = styled.button`
+//   background: transparent;
+//   border-radius: 40px;
+//   border: 2px solid palevioletred;
+//   color: #fff;
+//   margin: 24px;
+//   padding: 16px 24px;
+//   letter-spacing: 1px;
+// `
 
 export default TopPage;

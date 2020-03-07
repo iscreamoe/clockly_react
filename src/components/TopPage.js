@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+
 import { Header, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 import bgImg from '../images/bgImg.jpg';
@@ -9,13 +10,17 @@ const TopPage = () => {
       <Wrapper>
         <Header as='h2' icon textAlign='center' className="top_header">
           <Logo>
-            <Icon name='clock outline' circular />
-              <Title>CLOCKLY</Title>
+            <Icon name='clock outline' />
+            <Title>CLOCKLY</Title>
           </Logo>
         </Header>
         <Container>
-          <Button><Link to='/signup'>Sign up</Link></Button>
-          <Button><Link to='/login'>Log in</Link></Button>
+          <Link to='/signup'>
+            <Button>SIGNUP</Button>
+          </Link>
+          <Link to='/login'>
+            <Button>LOGIN</Button>
+          </Link>
         </Container>
       </Wrapper>
   );
@@ -28,9 +33,9 @@ const Wrapper = styled.div`
 ` 
 const Logo = styled.div`
   padding-top: 32px;
+  color: #fff;
 ` 
 const Title = styled.div`
-  color: #fff;
   font-size: 32px;
   letter-spacing: 1.5px;
   margin-top: 32px;
@@ -38,15 +43,27 @@ const Title = styled.div`
 const Container = styled.div`
   margin-top: 50px;
   text-align: center;
+  color: #fff;
 `
 const Button = styled.button`
+  width: 150px;
+  height: 60px;
+  font-size: 16px;
   background: transparent;
   border-radius: 40px;
   border: 2px solid palevioletred;
   color: #fff;
   margin: 24px;
   padding: 16px 24px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  &:focus {
+    outline:0
+  };
+  &:hover {
+    background-color: rgb(197, 171, 172);
+    border: none;
+  };
 `
 
 export default TopPage;

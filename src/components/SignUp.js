@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+
 import styled from 'styled-components';
 import signUpBg from '../images/signUpBg.jpg';
+import Button from '../components/01_atoms/Button'
 
 const SignUp = () => {
   return (
@@ -26,7 +28,9 @@ const SignUp = () => {
           <p>password</p>
           <input type="password" />
           <Link to='/mypage'>
-            <Button type="submit">SIGN UP</Button>
+            <Button
+              name = "SIGNUP"
+            />
           </Link>
         </form>
     </Card>
@@ -63,15 +67,6 @@ const Card = styled.div`
   border-radius: 50px;
   background: #eef5ee;
   box-shadow: 20px 20px 60px #cad0ca, -20px -20px 60px #ffffff;
-`
-const Button = styled.button`
-  background: transparent;
-  border-radius: 40px;
-  border: 2px solid palevioletred;
-  color: #333;
-  margin: 24px;
-  padding: 16px 24px;
-  letter-spacing: 1px;
 `
 
 export default SignUp;

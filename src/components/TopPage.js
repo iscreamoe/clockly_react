@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Header, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 import bgImg from '../images/bgImg.jpg';
-import Button from '../components/01_atoms/Button'
 
 const TopPage = () => {
   return (
@@ -16,13 +15,11 @@ const TopPage = () => {
           </Logo>
         </Header>
         <Container>
-          <Link to='/signup'><Button
-              name = "SIGNUP"
-            />
+          <Link to='/signup'>
+            <Button>SIGNUP</Button>
           </Link>
-          <Link to='/login'><Button
-              name = "LOGIN"
-            />
+          <Link to='/login'>
+            <Button>LOGIN</Button>
           </Link>
         </Container>
       </Wrapper>
@@ -47,6 +44,26 @@ const Container = styled.div`
   margin-top: 50px;
   text-align: center;
   color: #fff;
+`
+const Button = styled.button`
+  width: 150px;
+  height: 60px;
+  font-size: 16px;
+  background: transparent;
+  border-radius: 40px;
+  border: 2px solid palevioletred;
+  color: #fff;
+  margin: 24px;
+  padding: 16px 24px;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  &:focus {
+    outline:0
+  };
+  &:hover {
+    background-color: rgb(197, 171, 172);
+    border: none;
+  };
 `
 
 export default TopPage;

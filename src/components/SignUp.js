@@ -11,7 +11,7 @@ const SignUp = () => {
         <Card>
           <Container>
             <Link to='/'><Close>Close</Close></Link>
-            <Title>Sign Up</Title>
+            <Title>SIGNUP</Title>
               <form action="#">
                 <Label htmlFor="name">
                   User Name

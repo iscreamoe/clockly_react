@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
-import signUpBg from '../images/signUpBg.jpg';
 
 const SignUp = () => {
   return (
@@ -45,8 +44,7 @@ const SignUp = () => {
                 <Input>
                   <input type="password" name="password" id="password" />
                 </Input>
-
-                <Link to='/mypage'>
+                <Link to='./mypage'>
                   <Button>SIGNUP</Button>
                 </Link>
               </form>
@@ -58,15 +56,11 @@ const SignUp = () => {
 }
 
 const Wrapper = styled.div`
-  background: #eef5ee;
+  background-color: rgba(45, 45, 45, 0.54);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-image: url(${signUpBg});
-  background-size: cover;
-  height: 100vh;
 `
 const Close =styled.div`
   position: absolute;

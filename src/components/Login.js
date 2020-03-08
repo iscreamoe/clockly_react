@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
-import loginBg from '../images/loginBg.jpg';
 
 const Login = () => {
   return (
@@ -28,7 +27,7 @@ const Login = () => {
                 </Input>
 
                 <Link to='/mypage'>
-                  <Button>LOGIN</Button>
+                  <Button>LOGIN</Button> 
                 </Link>
               </form>
           </Container>
@@ -39,15 +38,12 @@ const Login = () => {
 }
 
 const Wrapper = styled.div`
-  background: #eef5ee;
+  background-color: rgba(45, 45, 45, 0.54);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-image: url(${loginBg});
-  background-size: cover;
-  height: 100vh;
 `
 const Close =styled.div`
   position: absolute;

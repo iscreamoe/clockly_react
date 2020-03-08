@@ -1,9 +1,18 @@
 import React from 'react';
-import Friend from './Friend';
-import { Link } from "react-router-dom";
-import { Header, Segment, Grid } from 'semantic-ui-react';
-import { Dropdown, Menu } from 'semantic-ui-react';
+// import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  withRouter
+} from "react-router-dom";
+
+import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
+
+import Friend from './Friend';
+import Profile from './Profile';
 
 const MyPage = () => {
 
@@ -14,29 +23,18 @@ const MyPage = () => {
     { id: 4, image: "https://picsum.photos/id/555/150/150", name: "piyo", countryCity: "Paris", countryName: "France", flag: "fr flag" },
 ];
 
-//  doropdown link
-const options = [
-  { key: 1, text: 'Choice 1', value: 1 },
-  { key: 2, text: 'Choice 2', value: 2 },
-  { key: 3, text: <Link to='/'>LOGOUT</Link>, value: 3 },
-];
-
   return (
-    <>
-      <Wrapper>
-        <Segment clearing>
-          <Header as='h2' floated='right'>
-          User Name
-            <Menu compact>
-              <Dropdown text='Dropdown' options={options} simple item />
-            </Menu>
-          </Header>
-          <Header as='h2' floated='left'>
-            CLOCKLY
-          </Header>
-        </Segment>
+    <Wrapper>
+        <Header>
+          <Title>CLOCKLY</Title>
+          <Nav>
+            <Link to='/profile'><NavList>user name</NavList></Link>
+            <NavList>add friend</NavList>
+            <NavList>logout</NavList>
+          </Nav>
+        </Header>
 
-        <MyPageTitle>★- My Page -★</MyPageTitle>
+        <MyPageTitle>- My Page -</MyPageTitle>
 
         <Container>
           <Grid relaxed columns={4}>
@@ -58,7 +56,6 @@ const options = [
           </Grid>
         </Container>
       </Wrapper>
-    </>
   );
 }
 
@@ -66,6 +63,28 @@ const Wrapper = styled.div`
   background-size: cover;
   height: 100vh;
 ` 
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+`
+const Title = styled.h1`
+  font-size: 36px;
+  padding-top: 24px;
+  padding-left: 24px;
+`
+const Nav = styled.nav`
+  display: flex;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin-top: 34px;
+  list-style: none;
+`
+const NavList = styled.li`
+  margin-right: 34px;
+  &:hover {
+    color: rgb(197, 171, 172);
+  };
+`
 const Container = styled.div`
   margin-top: 40px;
   text-align: center;

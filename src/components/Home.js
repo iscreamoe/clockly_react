@@ -3,10 +3,11 @@ import { Route, Link, Switch} from "react-router-dom";
 
 import { Header, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
+import bgImg from '../images/bgImg.jpg';
 
 const Home = () => {
   return (
-    <>
+    <Wrapper>
       <Header as='h2' icon textAlign='center' className="top_header">
           <Logo>
             <Icon name='clock outline' />
@@ -21,10 +22,15 @@ const Home = () => {
             <Button>LOGIN</Button>
           </Link>
         </Container>
-    </>
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.div`
+  background-image: url(${bgImg});
+  background-size: cover;
+  height: 100vh;
+` 
 const Logo = styled.div`
   padding-top: 32px;
   color: #fff;

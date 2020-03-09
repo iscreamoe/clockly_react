@@ -1,12 +1,6 @@
 import React from 'react';
 // import { Link } from "react-router-dom";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  withRouter
-} from "react-router-dom";
+import { Link, Switch,} from "react-router-dom";
 
 import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
@@ -26,11 +20,11 @@ const MyPage = () => {
   return (
     <Wrapper>
         <Header>
-          <Title>CLOCKLY</Title>
+          <Link to='/mypage'><Title>CLOCKLY</Title></Link>
           <Nav>
             <Link to='/profile'><NavList>user name</NavList></Link>
-            <NavList>add friend</NavList>
-            <NavList>logout</NavList>
+            <Link to='/profile'><NavList>user name</NavList></Link>
+            <Link to='/'><NavList>logout</NavList></Link>
           </Nav>
         </Header>
 

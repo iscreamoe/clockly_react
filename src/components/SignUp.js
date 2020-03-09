@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
+import bgImg from '../images/bgImg.jpg';
+
 
 const SignUp = () => {
   return (
-    <>
-      <Wrapper>
+    <Wrapper>
+      <BgMask>
         <Card>
           <Container>
             <Link to='/'><Close>Close</Close></Link>
@@ -50,12 +52,18 @@ const SignUp = () => {
               </form>
           </Container>
         </Card>
-      </Wrapper>
-    </>
+      </BgMask>
+    </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
+  background-image: url(${bgImg});
+  background-size: cover;
+  height: 100vh;
+` 
+
+const BgMask = styled.div`
   background-color: rgba(45, 45, 45, 0.54);
   min-height: 100vh;
   display: flex;

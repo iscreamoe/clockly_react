@@ -1,18 +1,11 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  withRouter
-} from "react-router-dom";
 
 import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
 
-import Friend from './Friend';
-import Profile from './Profile';
+import Friend from '../Friend';
+import MyPageTemplate from '../templates/MyPageTemplate';
+
 
 const MyPage = () => {
 
@@ -24,18 +17,9 @@ const MyPage = () => {
 ];
 
   return (
-    <Wrapper>
-        <Header>
-          <Title>CLOCKLY</Title>
-          <Nav>
-            <Link to='/profile'><NavList>user name</NavList></Link>
-            <NavList>add friend</NavList>
-            <NavList>logout</NavList>
-          </Nav>
-        </Header>
-
+    <MyPageTemplate>
+      <Wrapper>
         <MyPageTitle>- My Page -</MyPageTitle>
-
         <Container>
           <Grid relaxed columns={4}>
             {friends.map((friend, index) => {
@@ -56,6 +40,7 @@ const MyPage = () => {
           </Grid>
         </Container>
       </Wrapper>
+    </MyPageTemplate>
   );
 }
 
@@ -63,28 +48,6 @@ const Wrapper = styled.div`
   background-size: cover;
   height: 100vh;
 ` 
-const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-`
-const Title = styled.h1`
-  font-size: 36px;
-  padding-top: 24px;
-  padding-left: 24px;
-`
-const Nav = styled.nav`
-  display: flex;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  margin-top: 34px;
-  list-style: none;
-`
-const NavList = styled.li`
-  margin-right: 34px;
-  &:hover {
-    color: rgb(197, 171, 172);
-  };
-`
 const Container = styled.div`
   margin-top: 40px;
   text-align: center;

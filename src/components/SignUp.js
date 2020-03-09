@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
+import HomeTemplate from '../components/templates/HomeTemplate';
+
+
 
 const SignUp = () => {
   return (
-    <>
-      <Wrapper>
+    <HomeTemplate>
+      <BgMask>
         <Card>
           <Container>
             <Link to='/'><Close>Close</Close></Link>
@@ -50,12 +53,12 @@ const SignUp = () => {
               </form>
           </Container>
         </Card>
-      </Wrapper>
-    </>
+      </BgMask>
+    </HomeTemplate>
   );
 }
 
-const Wrapper = styled.div`
+const BgMask = styled.div`
   background-color: rgba(45, 45, 45, 0.54);
   min-height: 100vh;
   display: flex;

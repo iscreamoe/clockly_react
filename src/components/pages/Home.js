@@ -1,12 +1,13 @@
 import React from 'react';
-import { Route, Link, Switch} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Header, Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
+import HomeTemplate from '../templates/HomeTemplate';
 
 const Home = () => {
   return (
-    <>
+    <HomeTemplate>
       <Header as='h2' icon textAlign='center' className="top_header">
           <Logo>
             <Icon name='clock outline' />
@@ -21,7 +22,7 @@ const Home = () => {
             <Button>LOGIN</Button>
           </Link>
         </Container>
-    </>
+    </HomeTemplate>
   )
 }
 

@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import MyPageTemplate from '../components/templates/MyPageTemplate';
 
-const Profile = () => {
+
+const AddFriend = () => {
   return (
     <MyPageTemplate>
-      <Text>Profile!</Text>
+      <Text>Add Friend!</Text>
     </MyPageTemplate>
   );
 }
@@ -16,4 +17,5 @@ const Text = styled.div`
   margin: 100px;
 `
 
-export default Profile;
+export default AddFriend;
+

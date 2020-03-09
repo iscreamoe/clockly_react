@@ -5,10 +5,10 @@ import {
   Switch
 } from "react-router-dom";
 
-import Home from './components/Home';
+import Home from './components/pages/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import MyPage from './components/MyPage';
+import MyPage from './components/pages/MyPage';
 import Profile from './components/Profile';
 import AddFriend from './components/AddFriend';
 

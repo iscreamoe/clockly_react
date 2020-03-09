@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import MyPageTemplate from '../components/templates/MyPageTemplate';
 
 const Profile = () => {
   return (
-    <Text>Profile!</Text>
+    <MyPageTemplate>
+      <Text>Profile!</Text>
+    </MyPageTemplate>
   );
 }
 

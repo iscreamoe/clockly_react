@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import MyPageTemplate from '../components/templates/MyPageTemplate';
+
 
 const AddFriend = () => {
   return (
-    <Text>Profile!</Text>
+    <MyPageTemplate>
+      <Text>Add Friend!</Text>
+    </MyPageTemplate>
   );
 }
 

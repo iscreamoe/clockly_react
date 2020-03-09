@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components';
-import bgImg from '../images/bgImg.jpg';
+import HomeTemplate from '../components/templates/HomeTemplate';
 
 
 const Login = () => {
   return (
-    <Wrapper>
+    <HomeTemplate>
       <BgMask>
         <Card>
           <Container>
@@ -35,15 +35,10 @@ const Login = () => {
           </Container>
         </Card>
       </BgMask>
-    </Wrapper>
+    </HomeTemplate>
   );
 }
 
-const Wrapper = styled.div`
-  background-image: url(${bgImg});
-  background-size: cover;
-  height: 100vh;
-` 
 const BgMask = styled.div`
   background-color: rgba(45, 45, 45, 0.54);
   min-height: 100vh;

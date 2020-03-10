@@ -9,19 +9,20 @@ const Home = () => {
   return (
     <HomeTemplate>
       <Header as='h2' icon textAlign='center' className="top_header">
-          <Logo>
-            <Icon name='clock outline' />
-            <Title>CLOCKLY</Title>
-          </Logo>
-        </Header>
-        <Container>
-          <Link to='/signup'>
-            <Button>SIGNUP</Button>
-          </Link>
-          <Link to='/login'>
-            <Button>LOGIN</Button>
-          </Link>
-        </Container>
+        <Logo>
+          <Icon name='clock outline' />
+          <Title>CLOCKLY</Title>
+        </Logo>
+      </Header>
+
+      <Container>
+        <Link to='/signup'>
+          <Button>SIGNUP</Button>
+        </Link>
+        <Link to='/login'>
+          <Button>LOGIN</Button>
+        </Link>
+      </Container>
     </HomeTemplate>
   )
 }

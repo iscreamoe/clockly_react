@@ -18,7 +18,6 @@ const MyPage = () => {
 
   return (
     <MyPageTemplate>
-      <Wrapper>
         <MyPageTitle>- My Page -</MyPageTitle>
         <Container>
           <Grid relaxed columns={4}>
@@ -39,15 +38,10 @@ const MyPage = () => {
             })}
           </Grid>
         </Container>
-      </Wrapper>
     </MyPageTemplate>
   );
 }
 
-const Wrapper = styled.div`
-  background-size: cover;
-  height: 100vh;
-` 
 const Container = styled.div`
   margin-top: 40px;
   text-align: center;

@@ -22,6 +22,8 @@ export default ({ children }) => {
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
+  background-color: pink;
+  height: 100px;
 `
 const Title = styled.h1`
   font-size: 36px;

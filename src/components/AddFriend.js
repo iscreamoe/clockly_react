@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import * as firebase from 'firebase';
 
 import styled from 'styled-components';
 import MyPageTemplate from '../components/templates/MyPageTemplate';
 
 const AddFriend = () => {
+  const [friendName, setFriendName] = useState("");
+  const [friendCountry, setFriendCountry] = useState("");
+  const db = firebase.firestore();
+  
+  const handleClickAddButton = async () => {
+    if (!friendName || !friendCountry) {
+      alert('"friendName" or "friendCountry" が空です！');
+      return;
+    }
+
+    await db.collection('friends').add({
+        friendName: friendName,
+        friendCountry: friendCountry
+      });
+      setFriendName("");
+      setFriendCountry("");
+  };
+
+  const handleChangeFriendName = e => {setFriendName(e.target.value)}
+
+  const handleChangeFriendCountry = e => {setFriendCountry(e.target.value)}
+
+  console.log(friendName);
+  console.log(friendCountry);
   return (
     <MyPageTemplate>
       <BgMask>
@@ -21,13 +46,19 @@ const AddFriend = () => {
                     type="text"
                     name="name"
                     id="name"
+                    value={friendName}
+                    onChange={handleChangeFriendName}
                   />
                 </Input>
 
                 <Label htmlFor="country">
                   country
                 </Label>
-                <Input>
+                <Input
+                  type="select"
+                  value={friendCountry}
+                  onChange={handleChangeFriendCountry}
+                >
                   <select name="country">
                     <option>Select Country</option>
                     <option>1</option>
@@ -37,7 +68,7 @@ const AddFriend = () => {
                 </Input>
 
                 <Link to='./mypage'>
-                  <Button>Add Friend</Button>
+                  <Button onClick={handleClickAddButton}>Add Friend</Button>
                 </Link>
               </form>
           </Container>

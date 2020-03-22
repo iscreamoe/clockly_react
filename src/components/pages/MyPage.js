@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import * as firebase from 'firebase';
 
 import { Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
@@ -9,30 +10,40 @@ import MyPageTemplate from '../templates/MyPageTemplate';
 
 const MyPage = () => {
 
-  const friends = [
-    { id: 1, image: "https://picsum.photos/id/237/150/150", name: "foobar", countryCity: "California", countryName: "United States", flag: "us flag" },
-    { id: 2, image: "https://picsum.photos/id/666/150/150", name: "hoge", countryCity: "Kuala Lumpur", countryName: "Malaysia", flag: "my flag" },
-    { id: 3, image: "https://picsum.photos/id/222/150/150", name: "fuga", countryCity: "Melbourne", countryName: "Australia", flag: "au flag" },
-    { id: 4, image: "https://picsum.photos/id/555/150/150", name: "piyo", countryCity: "Paris", countryName: "France", flag: "fr flag" },
-];
+  const [friends, setFriends] = useState([]);
+  useEffect(() => {
+    const db = firebase.firestore();
+    const addFriend = db.collection('friends').onSnapshot((querySnapshot) => {
+      const _friends = querySnapshot.docs.map(doc => {
+        return {
+          friendId: doc.id,
+          ...doc.data()
+        }
+      });
+      setFriends(_friends);
+    });
+    return () => {
+      addFriend();
+    }
+  }, []);
 
   return (
     <MyPageTemplate>
         <MyPageTitle>- My Page -</MyPageTitle>
         <Container>
           <Grid relaxed columns={4}>
-            {friends.map((friend, index) => {
-              const { id, image, name, countryCity, countryName, flag } = friend;
+            {friends.map((friend, friendId) => {
+              // const {  } = friend;
               return (
-                <Grid.Column key={index}>
+                <Grid.Column key={friendId}>
                   <Friend 
-                    id = {id}
-                    image = {image}
-                    name = {name}
-                    countryCity = {countryCity}
-                    countryName = {countryName}
-                    flag = {flag}
-                    />
+                    // id = {friendId}
+                    // image = {image}
+                    // name = {friendName}
+                    // countryCity = {countryCity}
+                    // countryName = {countryName}
+                    // flag = {flag}
+                  />
                 </Grid.Column>
               )
             })}

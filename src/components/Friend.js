@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
+
 
 const Friend = props => {
   const { image, name, countryCity, countryName, flag } = props;

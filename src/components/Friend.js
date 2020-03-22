@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
 
 const Friend = props => {
-  const { image, name, countryCity, countryName, flag } = props;
+  const { friendName, friendCountry } = props;
     return (
       <Card>
-        <Image src={image} wrapped ui={false} />
+        {/* <Image src={image} wrapped ui={false} /> */}
         <Card.Content>
           <Card.Header>
-            <h1>{name}</h1>
-            <p>{countryCity}/{countryName} &nbsp;&nbsp;<i class={flag}></i></p>
+            <h1>{friendName}</h1>
+            <p>{friendCountry}</p> &nbsp;&nbsp;
+            {/* <i class={flag}></i></p> */}
           </Card.Header>
           <Card.Description>
             <Icon.Group size='large'>

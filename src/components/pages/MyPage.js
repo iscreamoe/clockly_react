@@ -14,34 +14,34 @@ const MyPage = () => {
   useEffect(() => {
     const db = firebase.firestore();
     const addFriend = db.collection('friends').onSnapshot((querySnapshot) => {
-      const _friends = querySnapshot.docs.map(doc => {
+      const friends = querySnapshot.docs.map(doc => {
         return {
           friendId: doc.id,
           ...doc.data()
         }
       });
-      setFriends(_friends);
+      setFriends(friends);
+      console.log(friends);
     });
     return () => {
       addFriend();
     }
   }, []);
-
   return (
     <MyPageTemplate>
         <MyPageTitle>- My Page -</MyPageTitle>
         <Container>
           <Grid relaxed columns={4}>
-            {friends.map((friend, friendId) => {
-              // const {  } = friend;
+            {friends.map((friend, index) => {
+              const { friendId, friendName, friendCountry } = friend;
               return (
-                <Grid.Column key={friendId}>
+                <Grid.Column key={index}>
                   <Friend 
-                    // id = {friendId}
+                    friendId = {friendId}
                     // image = {image}
-                    // name = {friendName}
+                    friendName = {friendName}
                     // countryCity = {countryCity}
-                    // countryName = {countryName}
+                    friendCountry = {friendCountry}
                     // flag = {flag}
                   />
                 </Grid.Column>

@@ -28,8 +28,6 @@ const AddFriend = () => {
 
   const handleChangeFriendCountry = e => {setFriendCountry(e.target.value)}
 
-  console.log(friendName);
-  console.log(friendCountry);
   return (
     <MyPageTemplate>
       <BgMask>

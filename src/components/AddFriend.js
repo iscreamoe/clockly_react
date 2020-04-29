@@ -4,11 +4,11 @@ import * as firebase from 'firebase';
 
 import styled from 'styled-components';
 import MyPageTemplate from '../components/templates/MyPageTemplate';
+const db = firebase.firestore();
 
 const AddFriend = () => {
   const [friendName, setFriendName] = useState("");
   const [friendCountry, setFriendCountry] = useState("");
-  const db = firebase.firestore();
   
   const handleClickAddButton = async () => {
     if (!friendName || !friendCountry) {
